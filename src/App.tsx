@@ -1,5 +1,5 @@
 import "./styles.css";
-import Component from "./Component";
+import ToggleQuestion from "./ToggleQuestion";
 import Shuffler from "./Shuffler";
 
 export default function App() {
@@ -19,7 +19,7 @@ export default function App() {
           "Impermeable membrane",
           "Celluose"
         ]}
-        InputComponent={Component}
+        InputComponent={ToggleQuestion}
       />
     </div>
   );

@@ -13,7 +13,7 @@ export type AnswerPair = {
   wrongFirst: boolean;
 };
 
-const Component: FunctionComponent<Props> = ({ question, answers }) => {
+const ToggleQuestion: FunctionComponent<Props> = ({ question, answers }) => {
   const [numberCorrect, setNumberCorrect] = useState(
     answers.filter((x) => !x.wrongFirst).length
   );
@@ -45,12 +45,13 @@ const Component: FunctionComponent<Props> = ({ question, answers }) => {
     >
       <h1>{question}</h1>
       <div className="inputsContainer">
-        {answers.map((x) => (
+        {answers.map((x, i) => (
           <Switch
             left={x.wrongFirst ? x.wrong : x.correct}
             right={x.wrongFirst ? x.correct : x.wrong}
             onToggle={onToggle}
             lock={allCorrect}
+            key={`switch-${i}`}
           />
         ))}
       </div>
@@ -61,4 +62,4 @@ const Component: FunctionComponent<Props> = ({ question, answers }) => {
   );
 };
 
-export default Component;
+export default ToggleQuestion;

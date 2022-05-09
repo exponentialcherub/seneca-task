@@ -1,6 +1,6 @@
 import { shuffle, getRandomInt } from "./utilities";
 import React, { FunctionComponent } from "react";
-import Component, { Props, AnswerPair } from "./Component";
+import ToggleQuestion, { Props, AnswerPair } from "./ToggleQuestion";
 
 type ShufflerProps = {
   question: string;
@@ -13,7 +13,7 @@ const Shuffler: FunctionComponent<ShufflerProps> = ({
   question,
   correctAnswers,
   wrongAnswers,
-  InputComponent = Component
+  InputComponent = ToggleQuestion
 }) => {
   const shuffledCorrectAnswers = shuffle(correctAnswers);
   const shuffledWrongAnswers = shuffle(wrongAnswers);
